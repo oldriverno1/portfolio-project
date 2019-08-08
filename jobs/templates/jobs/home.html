@@ -47,7 +47,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
                 <a class="nav-item nav-link" href="https://www.linkedin.com/in/思翰-王-84223b13b/">linkdin</a>
-                <a class="nav-item nav-link" href="{% static '王思翰resume.pdf'%}">resume</a>
+                <a class="nav-item nav-link" href="{% static 'resume.pdf'%}">resume</a>
                 <a class="nav-item nav-link" href="{% url 'blog' %}">blog</a>
             </div>
         </div>
@@ -73,7 +73,7 @@
                 {% for job in jobs.all %}
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
-                        <img class="card-img-top" src="{{job.image.url}}">
+                        <img class="card-img-top,img-fluid" src="{{job.image.url}}" height="200">
                         <div class="card-body">
                             <p class="card-text">{{ job.summary }}</p>
                         </div>
