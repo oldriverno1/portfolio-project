@@ -7,3 +7,9 @@ class Blog(models.Model):
     pub_date = models.DateTimeField()
     image = models.ImageField(upload_to='images/')
     body = models.TextField()
+
+    def summary(self):
+        return self.body[:100]  # self is use when inside a class and the function wants to use the value of the class
+
+    def __str__(self):
+        return self.title

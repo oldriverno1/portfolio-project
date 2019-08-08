@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Henry Wang</title>
+    <title>{{blog.title}}</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
@@ -31,7 +31,11 @@
         }
       }
 
-    
+
+
+
+
+
     </style>
     <!-- Custom styles for this template -->
     <link href="album.css" rel="stylesheet">
@@ -48,50 +52,27 @@
             <div class="navbar-nav ml-auto">
                 <a class="nav-item nav-link" href="https://www.linkedin.com/in/思翰-王-84223b13b/">linkdin</a>
                 <a class="nav-item nav-link" href="{% static '王思翰resume.pdf'%}">resume</a>
-                <a class="nav-item nav-link" href="{% url 'blog' %}">blog</a>
+                <a class="nav-item nav-link active" href="{% url 'blog' %}">blog</a>
             </div>
         </div>
     </nav>
 </header>
+<div class="container">
 
-<main role="main">
 
-    <section class="jumbotron text-center">
-        <div class="container">
-            <h1 class="jumbotron-heading">Henry Wang's portfolio</h1>
-            <p class="lead text-muted">Hi I'm Henry and this is my portfolio.</p>
-            <p>
-                <a href="mailto:henrywangsihhung100@gmail.com" class="btn btn-primary my-2">contact me</a>
-            </p>
-            <img  src="{% static 'Henry Wang.jpg' %}" height="300">
-        </div>
-    </section>
-    <div class="album py-5 bg-light">
-        <div class="container">
+    <h1 class="text-center">{{blog.title}}</h1>
+    <p class="text-center">{{blog.pub_date}}</p>
+    <img class="img-fluid center" src="{{blog.image.url}}" height="600" width="600">
+    <p>{{blog.body}}</p>
 
-            <div class="row">
-                {% for job in jobs.all %}
-                <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm">
-                        <img class="card-img-top" src="{{job.image.url}}">
-                        <div class="card-body">
-                            <p class="card-text">{{ job.summary }}</p>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
 
-</main>
-
+</div>
 <footer class="text-muted">
     <div class="container">
         <p class="float-right">
             <a href="#">Back to top</a>
         </p>
-        <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
+        <p>&copy; Henry Wang 2019</p>
     </div>
 </footer>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
