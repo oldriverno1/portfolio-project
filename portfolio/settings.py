@@ -76,10 +76,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'portfoliodb',
-        'USER':'postgres',
-        'PASSWORD':'django1234',
+        'USER': 'postgres',
+        'PASSWORD': 'django1234',
         'HOST': 'localhost',
-        'PORT':'5432',
+        'PORT': '5432',
 
     }
 }
@@ -128,4 +128,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'  #doesnt have to be the same as MEDIA_ROOT name
+MEDIA_URL = '/media/'  # doesnt have to be the same as MEDIA_ROOT name
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
